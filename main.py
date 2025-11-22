@@ -364,10 +364,10 @@ if not check_password():
 st.sidebar.title("Navigation")
 dashboard_type = st.sidebar.radio(
     "Choose Dashboard Type:",
-    ["Individual Student Dashboard EY25", "Students by JFD", "Retrospective Data Analysis (EY24)"]
+    ["Individual Student Dashboard", "Students by School"]
 )
 
-if dashboard_type == "Individual Student Dashboard EY25":
+if dashboard_type == "Individual Student Dashboard":
     # Original Individual Student Dashboard Code
     
     ## Read data from CSV files (with error handling)
@@ -444,7 +444,7 @@ if dashboard_type == "Individual Student Dashboard EY25":
     if individual_data_available:
         ## Create dashboard filters
         student_id = st.selectbox("Choose a student:", list(df_engagement_attendance['student_id'].unique()))
-        st.write('Here is a link to the [Texas JAMP Scholar Student Roster with Associated Student ID Numbers](https://drive.google.com/file/d/1ibmeF4CtRwOaZeCjLM3Nm5S_mGlMvgIZ/view?usp=sharing)')
+        st.write('Student Roster Listed Here')
 
         ## Transform dataframes
         df_engagement_attendance_student_filtered = df_engagement_attendance[df_engagement_attendance['student_id'] == student_id]
@@ -553,7 +553,7 @@ if dashboard_type == "Individual Student Dashboard EY25":
         st.write(' ')
         st.write(' ')
         st.header('Practice Exam Scores')
-        st.write('Students were asked to update us with practice exam schedules and scores throughout the program. This is a link to the [Texas JAMP Scholars | MCAT Exam Schedule & Scores Survey](https://docs.google.com/spreadsheets/d/10YBmWD7qFD0fjbD-8TK1gxNMVpwJyTLtOFtT1huh-FI/edit?usp=sharing)')
+        st.write('Students were asked to update us with practice exam schedules and scores throughout the program.=')
         st.write(' ')
 
         st.dataframe(df_test_scores_student_filtered[['test_name','test_date','actual_exam_score']],use_container_width=True)
@@ -781,7 +781,7 @@ if dashboard_type == "Individual Student Dashboard EY25":
         st.write(
             'Below demonstrates the weekly percentage of attendance by students within our "All Student" and "Small Group" classes.\n\n'
             'For example, if there are two large classes and a student attends one of them, they would receive a 50% attendance rate for that week. '
-            'A data point with 0% indicates no attendance during that week, while the absence of a data point reflects that no classes were held that week. Here is the [MCAT class schedule for JAMP Scholars](https://docs.google.com/document/d/1Ls6hA8GtfRgr983FUAIvxKAXMadUrdFswPeQHCfrgPo/edit?usp=sharing)'
+            'A data point with 0% indicates no attendance during that week, while the absence of a data point reflects that no classes were held that week.'
         )
         st.write(' ')
         st.write(' ')
@@ -821,8 +821,8 @@ if dashboard_type == "Individual Student Dashboard EY25":
 
         st.altair_chart(line_attendance,use_container_width=True)
 
-elif dashboard_type == "Students by JFD":
-    st.header("Students by JFD")
+elif dashboard_type == "Students by School":
+    st.header("Students by School")
 
     jfd_df = load_jfd_data()
 
@@ -832,10 +832,10 @@ elif dashboard_type == "Students by JFD":
 
     # Create JFD dropdown filter
     jfd_list = ['All JFDs'] + sorted(jfd_df['jfd'].dropna().unique().astype(int).tolist())
-    selected_jfd = st.selectbox("Choose a JFD to filter students:", jfd_list)
+    selected_jfd = st.selectbox("Choose a School ID to filter students:", jfd_list)
 
     # Filter dataframe based on selection
-    if selected_jfd != 'All JFDs':
+    if selected_jfd != 'All Schools':
         filtered_jfd_df = jfd_df[jfd_df['jfd'] == selected_jfd].copy()
     else:
         filtered_jfd_df = jfd_df.copy()
