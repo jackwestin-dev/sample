@@ -364,7 +364,7 @@ if not check_password():
 st.sidebar.title("Navigation")
 dashboard_type = st.sidebar.radio(
     "Choose Dashboard Type:",
-    ["Individual Student Dashboard", "Students by School", "Retrospective Data Analysis"]
+    ["Individual Student Dashboard", "Students by School"]
 )
 
 if dashboard_type == "Individual Student Dashboard":
@@ -439,7 +439,7 @@ if dashboard_type == "Individual Student Dashboard":
         except:
             st.write("- Unable to list directory contents")
         
-        st.info("💡 **Tip:** Use the **MCAT Analysis Dashboard** which uses the available data files.")
+       ## st.info("💡 **Tip:** Use the **MCAT Analysis Dashboard** which uses the available data files.")
     
     if individual_data_available:
         ## Create dashboard filters
