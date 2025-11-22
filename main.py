@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 # Configure Streamlit page
 st.set_page_config(
-    page_title="Institution TJ Scholar Dashboard",
+    page_title="Institution Sample Dashboard",
     page_icon="▧",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -364,10 +364,10 @@ if not check_password():
 st.sidebar.title("Navigation")
 dashboard_type = st.sidebar.radio(
     "Choose Dashboard Type:",
-    ["Individual Student Dashboard EY25", "Students by JFD", "Retrospective Data Analysis (EY24)"]
+    ["Individual Student Dashboard", "Students by School", "Retrospective Data Analysis"]
 )
 
-if dashboard_type == "Individual Student Dashboard EY25":
+if dashboard_type == "Individual Student Dashboard":
     # Original Individual Student Dashboard Code
     
     ## Read data from CSV files (with error handling)
@@ -444,7 +444,7 @@ if dashboard_type == "Individual Student Dashboard EY25":
     if individual_data_available:
         ## Create dashboard filters
         student_id = st.selectbox("Choose a student:", list(df_engagement_attendance['student_id'].unique()))
-        st.write('Here is a link to the [Texas JAMP Scholar Student Roster with Associated Student ID Numbers](https://drive.google.com/file/d/1ibmeF4CtRwOaZeCjLM3Nm5S_mGlMvgIZ/view?usp=sharing)')
+        st.write('The student rosters would be linked here.')
 
         ## Transform dataframes
         df_engagement_attendance_student_filtered = df_engagement_attendance[df_engagement_attendance['student_id'] == student_id]
@@ -475,7 +475,7 @@ if dashboard_type == "Individual Student Dashboard EY25":
         st.write(' ')
         st.write(' ')
         st.header('Student Tier Assessment')
-        st.caption('The tiers listed below represent student data gathered throughout their time in our MCAT program, from June 2025 to now.')
+        st.caption('Tiers are designed to help intervene target student groups to improve overrall student outcomes.')
         st.write(' ')
 
         # Check if we have tier data for this student
@@ -553,7 +553,7 @@ if dashboard_type == "Individual Student Dashboard EY25":
         st.write(' ')
         st.write(' ')
         st.header('Practice Exam Scores')
-        st.write('Students were asked to update us with practice exam schedules and scores throughout the program. This is a link to the [Texas JAMP Scholars | MCAT Exam Schedule & Scores Survey](https://docs.google.com/spreadsheets/d/10YBmWD7qFD0fjbD-8TK1gxNMVpwJyTLtOFtT1huh-FI/edit?usp=sharing)')
+        st.write('Students were asked to update us with practice exam schedules and scores throughout the program.')
         st.write(' ')
 
         st.dataframe(df_test_scores_student_filtered[['test_name','test_date','actual_exam_score']],use_container_width=True)
@@ -821,8 +821,8 @@ if dashboard_type == "Individual Student Dashboard EY25":
 
         st.altair_chart(line_attendance,use_container_width=True)
 
-elif dashboard_type == "Students by JFD":
-    st.header("Students by JFD")
+elif dashboard_type == "Students by School":
+    st.header("Students by School")
 
     jfd_df = load_jfd_data()
 
