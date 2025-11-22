@@ -895,7 +895,7 @@ elif dashboard_type == "Students by School":
     if not filtered_jfd_df.empty:
         st.dataframe(filtered_jfd_df[display_cols].sort_values('student_id'))
     else:
-        st.info(f"No students found for JFD {selected_jfd}.")
+        st.info(f"No students found for this school {selected_jfd}.")
 
 else:
     # Analysis Dashboard
