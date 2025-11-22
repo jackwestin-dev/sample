@@ -832,10 +832,10 @@ elif dashboard_type == "Students by School":
 
     # Create JFD dropdown filter
     jfd_list = ['All JFDs'] + sorted(jfd_df['jfd'].dropna().unique().astype(int).tolist())
-    selected_jfd = st.selectbox("Choose a JFD to filter students:", jfd_list)
+    selected_jfd = st.selectbox("Choose a program director or coordinator to filter students:", jfd_list)
 
     # Filter dataframe based on selection
-    if selected_jfd != 'All JFDs':
+    if selected_jfd != 'All directors or program directors':
         filtered_jfd_df = jfd_df[jfd_df['jfd'] == selected_jfd].copy()
     else:
         filtered_jfd_df = jfd_df.copy()
@@ -856,7 +856,7 @@ elif dashboard_type == "Students by School":
             (filtered_jfd_df['highest_exam_score'] < 495) & \
             (filtered_jfd_df['survey_tier'] == 'Tier 3') & \
             (filtered_jfd_df['large_group_tier'] == 'Tier 3') & \
-            (filtered_jfd_df['small_group_tier'] == 'Tier 3') & \
+            (filtered_jfd_df['small_group_tier'] == 'Tier 3') & I am running a few minutes late; my previous meeting is running over.
             (filtered_jfd_df['class_participation_tier'] == 'Tier 3'),
 
         "Category 4: <495 & Survey Tier 3":
@@ -885,17 +885,17 @@ elif dashboard_type == "Students by School":
             st.info("No students in this category.")
 
     # Display the complete list for the selected JFD
-    if selected_jfd == 'All JFDs':
+    if selected_jfd == 'All program coordinators or directors':
         st.header("Complete List of All Students")
         st.write("This list includes all students from the dataset, regardless of their category.")
     else:
-        st.header(f"Complete Student List for JFD {selected_jfd}")
-        st.write(f"This list includes all students for JFD {selected_jfd}, regardless of their category.")
+        st.header(f"Complete Student List for program coordinators or directors {selected_jfd}")
+        st.write(f"This list includes all students for program coordinators or directors {selected_jfd}, regardless of their category.")
     
     if not filtered_jfd_df.empty:
         st.dataframe(filtered_jfd_df[display_cols].sort_values('student_id'))
     else:
-        st.info(f"No students found for JFD {selected_jfd}.")
+        st.info(f"No students found for program coordinators or directors {selected_jfd}.")
 
 else:
     # Analysis Dashboard
