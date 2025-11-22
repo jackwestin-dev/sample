@@ -890,7 +890,7 @@ elif dashboard_type == "Students by School":
         st.write("This list includes all students from the dataset, regardless of their category.")
     else:
         st.header(f"Complete Student List for JFD {selected_jfd}")
-        st.write(f"This list includes all students for JFD {selected_jfd}, regardless of their category.")
+        st.write(f"This list includes all students for program directors {selected_jfd}, regardless of their category.")
     
     if not filtered_jfd_df.empty:
         st.dataframe(filtered_jfd_df[display_cols].sort_values('student_id'))
