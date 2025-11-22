@@ -590,7 +590,6 @@ if dashboard_type == "Individual Student Dashboard":
                     labelExpr="'Practice Exam Score'"
                 )
             )
-        )
 
         st.altair_chart(point_exam_scores,use_container_width=True)
         st.write(' ')
