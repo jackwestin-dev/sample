@@ -1,27 +1,27 @@
 student_id,jamp_school,survey_tier,large_group_tier,small_group_tier,class_participation_tier,anticipated_exam_date,highest_exam_score,all_exams_and_scores,exam_count,category_1,category_2,category_3,category_4,category_5,category_6,jfd
-1,1.0,Tier 1,Tier 1,Tier 2,Tier 1,2025-01-15,505.0,"JW Exam 1: 499.0, AAMC Free Sample Test (Unscored): 505.0",2,0,1,0,0,0,0,1.0
-2,2.0,Tier 1,Tier 3,Tier 3,Tier 3,2025-01-15,501.0,"JW Exam 1: 479.0, AAMC Free Sample Test (Unscored): 501.0",0,1,0,0,0,0,0,2.0
-3,3.0,Tier 1,Tier 3,Tier 3,Tier 3,2025-01-15,508.0,"JW Exam 1: 499.0, AAMC Free Sample Test (Unscored): 508.0",0,1,0,0,0,0,0,3.0
-4,4.0,Tier 1,Tier 2,Tier 3,Tier 2,2025-01-15,490.0,JW Exam 1: 490.0,1,0,1,0,0,0,0,4.0
-5,5.0,Tier 1,Tier 1,Tier 3,Tier 2,2025-01-15,501.0,"JW Exam 1: 493.0, AAMC Free Sample Test (Unscored): 501.0",2,0,1,0,0,0,0,5.0
-6,6.0,Tier 1,Tier 2,Tier 3,Tier 1,2025-02-13,506.0,AAMC Free Sample Test (Unscored): 506.0,1,0,0,0,0,0,0,6.0
-7,7.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-04-10,497.0,"JW Exam 1: 494.0, AAMC Free Sample Test (Unscored): 503.0, JW Exam 2: 497.0",3,0,0,0,0,0,0,7.0
-8,3.0,Tier 1,Tier 1,Tier 1,Tier 2,2025-01-10,490.0,"JW Exam 1: 489.0, AAMC Free Sample Test (Unscored): 496.0, JW Exam 2: 490.0, AAMC Free Sample Test (Unscored): 496.0",4,0,0,0,0,0,0,3.0
-9,2.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-01-15,496.0,"JW Exam 1: 494.0, AAMC Free Sample Test (Unscored): 485.0, JW Exam 2: 496.0",3,0,0,0,0,0,0,2.0
-10,3.0,Tier 1,Tier 3,Tier 3,Tier 3,2025-01-15,504.0,JW Exam 1: 504.0,1,0,0,0,0,0,0,3.0
-11,5.0,Tier 1,Tier 1,Tier 1,Tier 2,2025-03-07,497.0,JW Exam 1: 497.0,1,0,0,0,0,0,0,5.0
-12,8.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-04-24,494.0,"JW Exam 1: 494.0, JW Exam 2: 489.0",2,0,0,0,0,0,0,8.0
-13,9.0,Tier 1,Tier 1,Tier 2,Tier 2,2025-02-13,504.0,"JW Exam 1: 498.0, AAMC Free Sample Test (Unscored): 499.0, JW Exam 2: 504.0",3,0,0,0,0,0,0,9.0
-14,3.0,Tier 1,Tier 1,Tier 2,Tier 2,2025-01-15,505.0,"JW Exam 1: 498.0, AAMC Free Sample Test (Unscored): 499.0, JW Exam 2: 505.0",0,1,0,0,0,0,0,3.0
-15,3.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-01-15,506.0,"JW Exam 1: 498.0, AAMC Free Sample Test (Unscored): 503.0, JW Exam 2: 506.0",3,0,0,0,0,0,0,3.0
-16,6.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-01-23,497.0,"JW Exam 1: 488.0, JW Exam 2: 497.0",2,0,0,0,0,0,0,6.0
-17,4.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-03-07,503.0,"JW Exam 1: 502.0, AAMC Free Sample Test (Unscored): 506.0, JW Exam 2: 503.0",3,0,0,0,0,0,0,4.0
-18,3.0,Tier 1,Tier 1,Tier 3,Tier 2,2025-01-15,502.0,"JW Exam 1: 495.0, AAMC Free Sample Test (Unscored): 502.0",1,0,1,0,0,1,0,3.0
-19,10.0,Tier 1,Tier 2,Tier 1,Tier 3,2025-01-23,499.0,"JW Exam 1: 493.0, AAMC Free Sample Test (Unscored): 499.0",1,0,0,0,0,0,0,10.0
-20,3.0,Tier 1,Tier 2,Tier 3,Tier 2,2025-01-15,493.0,JW Exam 1: 493.0,0,1,0,0,0,0,0,3.0
-21,11.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-01-15,497.0,"JW Exam 1: 497.0, AAMC Free Sample Test (Unscored): 489.0, AAMC Free Sample Test (Unscored): 491.0",3,0,1,0,0,0,0,11.0
-22,2.0,Tier 1,Tier 1,Tier 2,Tier 2,2025-02-13,488.0,"JW Exam 1: 480.0, AAMC Free Sample Test (Unscored): 489.0, AAMC Free Sample Test (Unscored): 488.0",1,0,0,0,0,0,0,2.0
-23,12.0,Tier 1,Tier 2,Tier 2,Tier 3,2025-01-15,497.0,AAMC Free Sample Test (Unscored): 497.0,1,0,1,0,0,0,0,12.0
-24,3.0,Tier 1,Tier 2,Tier 3,Tier 1,2025-01-15,498.0,JW Exam 1: 498.0,1,0,1,0,0,1,0,3.0
-25,3.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-01-10,499.0,"JW Exam 1: 499.0, AAMC Free Sample Test (Unscored): 489.0, JW Exam 2: 489.0",3,0,0,0,0,0,0,3.0
-26,3.0,Tier 1,Tier 1,Tier 1,Tier 1,2025-01-10,501.0,"JW Exam 1: 498.0, AAMC Free Sample Test (Unscored): 493.0, JW Practice Exam 2: 501.0, JW Exam 2: 501.0",4,0,0,0,0,0,0,3.0
+1,,,,,,,,,,,,,,,,
+2,,,,,,,,,,,,,,,,
+3,,,,,,,,,,,,,,,,
+4,,,,,,,,,,,,,,,,
+5,,,,,,,,,,,,,,,,
+6,,,,,,,,,,,,,,,,
+7,,,,,,,,,,,,,,,,
+8,,,,,,,,,,,,,,,,
+9,,,,,,,,,,,,,,,,
+10,,,,,,,,,,,,,,,,
+11,,,,,,,,,,,,,,,,
+12,,,,,,,,,,,,,,,,
+13,,,,,,,,,,,,,,,,
+14,,,,,,,,,,,,,,,,
+15,,,,,,,,,,,,,,,,
+16,,,,,,,,,,,,,,,,
+17,,,,,,,,,,,,,,,,
+18,,,,,,,,,,,,,,,,
+19,,,,,,,,,,,,,,,,
+20,,,,,,,,,,,,,,,,
+21,,,,,,,,,,,,,,,,
+22,,,,,,,,,,,,,,,,
+23,,,,,,,,,,,,,,,,
+24,,,,,,,,,,,,,,,,
+25,,,,,,,,,,,,,,,,
+26,,,,,,,,,,,,,,,,
