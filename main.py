@@ -831,7 +831,7 @@ elif dashboard_type == "Students by School":
         st.stop()
 
     # Create JFD dropdown filter
-    jfd_list = ['All JFDs'] + sorted(jfd_df['jfd'].dropna().unique().astype(int).tolist())
+    jfd_list = ['All Schools'] + sorted(jfd_df['jfd'].dropna().unique().astype(int).tolist())
     selected_jfd = st.selectbox("Choose a School ID to filter students:", jfd_list)
 
     # Filter dataframe based on selection
@@ -885,7 +885,7 @@ elif dashboard_type == "Students by School":
             st.info("No students in this category.")
 
     # Display the complete list for the selected JFD
-    if selected_jfd == 'All JFDs':
+    if selected_jfd == 'All Schools':
         st.header("Complete List of All Students")
         st.write("This list includes all students from the dataset, regardless of their category.")
     else:
