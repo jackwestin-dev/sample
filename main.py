@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 # Configure Streamlit page
 st.set_page_config(
-    page_title="Institution Sample Dashboard",
+    page_title="Institution TJ Scholar Dashboard",
     page_icon="▧",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -364,10 +364,10 @@ if not check_password():
 st.sidebar.title("Navigation")
 dashboard_type = st.sidebar.radio(
     "Choose Dashboard Type:",
-    ["Individual Student Dashboard", "Students by School"]
+    ["Individual Student Dashboard EY25", "Students by JFD", "Retrospective Data Analysis (EY24)"]
 )
 
-if dashboard_type == "Individual Student Dashboard":
+if dashboard_type == "Individual Student Dashboard EY25":
     # Original Individual Student Dashboard Code
     
     ## Read data from CSV files (with error handling)
@@ -439,12 +439,12 @@ if dashboard_type == "Individual Student Dashboard":
         except:
             st.write("- Unable to list directory contents")
         
-       ## st.info("💡 **Tip:** Use the **MCAT Analysis Dashboard** which uses the available data files.")
+        st.info("💡 **Tip:** Use the **MCAT Analysis Dashboard** which uses the available data files.")
     
     if individual_data_available:
         ## Create dashboard filters
         student_id = st.selectbox("Choose a student:", list(df_engagement_attendance['student_id'].unique()))
-        st.write('The student rosters would be linked here.')
+        st.write('Here is a link to the [Texas JAMP Scholar Student Roster with Associated Student ID Numbers](https://drive.google.com/file/d/1ibmeF4CtRwOaZeCjLM3Nm5S_mGlMvgIZ/view?usp=sharing)')
 
         ## Transform dataframes
         df_engagement_attendance_student_filtered = df_engagement_attendance[df_engagement_attendance['student_id'] == student_id]
@@ -475,7 +475,7 @@ if dashboard_type == "Individual Student Dashboard":
         st.write(' ')
         st.write(' ')
         st.header('Student Tier Assessment')
-        st.caption('Tiers are designed to help intervene target student groups to improve overrall student outcomes.')
+        st.caption('The tiers listed below represent student data gathered throughout their time in our MCAT program, from June 2025 to now.')
         st.write(' ')
 
         # Check if we have tier data for this student
@@ -553,7 +553,7 @@ if dashboard_type == "Individual Student Dashboard":
         st.write(' ')
         st.write(' ')
         st.header('Practice Exam Scores')
-        st.write('Students were asked to update us with practice exam schedules and scores throughout the program.')
+        st.write('Students were asked to update us with practice exam schedules and scores throughout the program. This is a link to the [Texas JAMP Scholars | MCAT Exam Schedule & Scores Survey](https://docs.google.com/spreadsheets/d/10YBmWD7qFD0fjbD-8TK1gxNMVpwJyTLtOFtT1huh-FI/edit?usp=sharing)')
         st.write(' ')
 
         st.dataframe(df_test_scores_student_filtered[['test_name','test_date','actual_exam_score']],use_container_width=True)
@@ -821,8 +821,8 @@ if dashboard_type == "Individual Student Dashboard":
 
         st.altair_chart(line_attendance,use_container_width=True)
 
-elif dashboard_type == "Students by School":
-    st.header("Students by School")
+elif dashboard_type == "Students by JFD":
+    st.header("Students by JFD")
 
     jfd_df = load_jfd_data()
 
@@ -832,10 +832,10 @@ elif dashboard_type == "Students by School":
 
     # Create JFD dropdown filter
     jfd_list = ['All JFDs'] + sorted(jfd_df['jfd'].dropna().unique().astype(int).tolist())
-    selected_jfd = st.selectbox("Choose a program director or coordinator to filter students:", jfd_list)
+    selected_jfd = st.selectbox("Choose a JFD to filter students:", jfd_list)
 
     # Filter dataframe based on selection
-    if selected_jfd != 'All directors or program directors':
+    if selected_jfd != 'All JFDs':
         filtered_jfd_df = jfd_df[jfd_df['jfd'] == selected_jfd].copy()
     else:
         filtered_jfd_df = jfd_df.copy()
@@ -853,18 +853,18 @@ elif dashboard_type == "Students by School":
             (filtered_jfd_df['highest_exam_score'] < 502) & (filtered_jfd_df['anticipated_exam_date'].isnull()),
 
         "Category 3: <495 & Tier 3 Across All Metrics":
-            (filtered_jfd_df['highest_exam_score'] < 495) & \
-            (filtered_jfd_df['survey_tier'] == 'Tier 3') & \
-            (filtered_jfd_df['large_group_tier'] == 'Tier 3') & \
-            (filtered_jfd_df['small_group_tier'] == 'Tier 3') & I am running a few minutes late; my previous meeting is running over.
-            (filtered_jfd_df['class_participation_tier'] == 'Tier 3'),
+            ((filtered_jfd_df['highest_exam_score'] < 495) &
+            (filtered_jfd_df['survey_tier'] == 'Tier 3') &
+            (filtered_jfd_df['large_group_tier'] == 'Tier 3') &
+            (filtered_jfd_df['small_group_tier'] == 'Tier 3') &
+            (filtered_jfd_df['class_participation_tier'] == 'Tier 3')),
 
         "Category 4: <495 & Survey Tier 3":
             (filtered_jfd_df['highest_exam_score'] < 495) & (filtered_jfd_df['survey_tier'] == 'Tier 3'),
 
         "Category 5: 495–500 & Small Group Tier 3":
-            (filtered_jfd_df['highest_exam_score'] >= 495) & (filtered_jfd_df['highest_exam_score'] <= 500) & \
-            (filtered_jfd_df['small_group_tier'] == 'Tier 3'),
+            ((filtered_jfd_df['highest_exam_score'] >= 495) & (filtered_jfd_df['highest_exam_score'] <= 500) &
+            (filtered_jfd_df['small_group_tier'] == 'Tier 3')),
 
         "Category 6: <495 & Large Group Tier 3":
             (filtered_jfd_df['highest_exam_score'] < 495) & (filtered_jfd_df['large_group_tier'] == 'Tier 3')
@@ -885,17 +885,17 @@ elif dashboard_type == "Students by School":
             st.info("No students in this category.")
 
     # Display the complete list for the selected JFD
-    if selected_jfd == 'All program coordinators or directors':
+    if selected_jfd == 'All JFDs':
         st.header("Complete List of All Students")
         st.write("This list includes all students from the dataset, regardless of their category.")
     else:
-        st.header(f"Complete Student List for program coordinators or directors {selected_jfd}")
-        st.write(f"This list includes all students for program coordinators or directors {selected_jfd}, regardless of their category.")
+        st.header(f"Complete Student List for JFD {selected_jfd}")
+        st.write(f"This list includes all students for JFD {selected_jfd}, regardless of their category.")
     
     if not filtered_jfd_df.empty:
         st.dataframe(filtered_jfd_df[display_cols].sort_values('student_id'))
     else:
-        st.info(f"No students found for program coordinators or directors {selected_jfd}.")
+        st.info(f"No students found for JFD {selected_jfd}.")
 
 else:
     # Analysis Dashboard
